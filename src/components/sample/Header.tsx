@@ -20,7 +20,7 @@ interface HeaderProps {
   onDrawerToggle: () => void;
 }
 
-export default function Header(props: HeaderProps) {
+export function Header(props: HeaderProps) {
   const { onDrawerToggle } = props;
 
   return (

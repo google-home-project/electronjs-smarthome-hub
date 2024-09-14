@@ -26,7 +26,7 @@ process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL
   ? path.join(process.env.APP_ROOT, 'public')
   : RENDERER_DIST;
 
-let win: BrowserWindow | null;
+let win: BrowserWindow | null; // Correct variable for the window
 
 function createWindow() {
   win = new BrowserWindow({
@@ -47,6 +47,11 @@ function createWindow() {
     // win.loadFile('dist/index.html')
     win.loadFile(path.join(RENDERER_DIST, 'index.html'));
   }
+
+  // Add resize listener to 'win'
+  win.on('resize', () => {
+    win?.webContents.send('window-resized'); // Ensure 'win' is used
+  });
 }
 
 // Quit when all windows are closed, except on macOS. There, it's common

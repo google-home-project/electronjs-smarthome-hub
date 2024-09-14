@@ -6,8 +6,8 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import Navigator from './Navigator';
-import Content from './Content';
-import Header from './Header';
+import { Content } from './Content';
+import { Header } from './Header';
 
 function Copyright() {
   return (
